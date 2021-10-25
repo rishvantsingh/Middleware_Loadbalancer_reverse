@@ -1,0 +1,17 @@
+ upstream node {
+     server localhost:5001; 
+     server localhost:5002;
+     server localhost:5003;
+   }
+
+
+   server {
+      listen 80; 
+
+      location / {
+          proxy_pass http://node;
+      }
+
+   }
+
+
